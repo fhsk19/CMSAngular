@@ -1,0 +1,48 @@
+<div>
+    <table id = "custorderhistory" class="table-bordered table-hover table-responsive" align="center">
+    <thead>
+        <tr bgcolor="#a1f4a9">
+          <th width = "10%">Order Id</th>
+          <th>FoodId</th>
+          <th>Qty</th>
+          <th>TotalPrice</th>
+          <th>EstimatedTime</th>
+          <th>OrderTime</th>
+          <th>OrderDate</th>
+          <th width = "10%">Vendor</th>
+
+          <th>OStatus</th>
+          <th width = "20%">OComment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr bgcolor="#eddcc4" *ngFor='let ord of orders '>
+          <td>{{ord.oid}}</td>
+          <td>{{ord.foodId}}</td>
+          <td>{{ord.qty}}</td>
+          <td> ₹. {{ord.totalPrice}}</td>
+          <td>{{ord.estimatedTime}}</td>
+          <td>{{ord.orderTime}}</td>
+          <td>{{ord.orderDate | date}}</td>
+          <td>{{ord.vid}}</td>
+          <td>{{ord.ostatus}}</td>
+          <td>{{ord.ocomment}}</td>
+
+        </tr>
+        <tr *ngIf="!orders || orders.length==0">
+
+          <td colspan="11">
+
+            No chistory list to display
+
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <br>
+  <div>

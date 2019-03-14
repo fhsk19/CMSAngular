@@ -1,0 +1,10 @@
+<div class= "container" style="text-align:center">
+    <h1>
+        <span class="blinking">Welcome {{vName}}!</span>
+    </h1>
+    <br>
+<input type="button" routerLink ="vendororderhistory" value = "Vendor Order History">
+<input type="button" routerLink ="vendoracceptdeny" value = "Accept/Deny Order">
+<input type="button" (click)="vconf()" value = "Logout">
+<router-outlet></router-outlet>
+</div>

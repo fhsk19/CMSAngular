@@ -1,0 +1,35 @@
+<br>
+<div id = example class = "example">
+  <h2>Vendor Login</h2>
+    <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+         <label>User Name</label>
+         <input type="text" formControlName="vuserName"
+                 class="form-control"/>
+      <div *ngIf="f.vuserName.touched && f.vuserName.errors" class="alert alert-warning">
+      <div *ngIf="f.vuserName.errors.required">
+        User name is required
+      </div>
+    </div>
+      </div>
+      <div class="form-group">
+         <label>Password</label>
+         <input type="password" formControlName="vpassword"
+                 class="form-control" />
+                 <div *ngIf="f.vpassword.touched && f.vpassword.errors"
+                                    class="alert alert-danger">
+                  <div *ngIf="f.vpassword.errors.required">
+                    Password is required
+                  </div>
+                    <div *ngIf="f.vpassword.errors.minlength">
+                       Password must be at least 2 characters..
+                  </div>
+                </div>
+      </div>
+      <div class="form-group">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+         <button class="button"><span>Login</span></button>
+         &nbsp;
+         <span><input type="button" routerLink ="/home" value="Cancel"/></span>
+ </div>
+

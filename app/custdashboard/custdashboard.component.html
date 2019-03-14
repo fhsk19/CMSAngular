@@ -1,0 +1,12 @@
+<div class= "container" style="text-align:center">
+    <h1>
+        <span class="blinking">Welcome {{cName}}!</span>
+    </h1>
+
+<input type="button" routerLink ="custorderhistory" value = "Customer Order History"> &nbsp;
+<input type="button" routerLink ="custplaceorder" value = "Place Order"> &nbsp;
+<input type="button" routerLink ="custshowwallet" value = "Customer Wallet Details"> &nbsp;
+<input type="button" (click)="conf()" value = "Logout"> <br>
+<br>
+<router-outlet></router-outlet>
+</div>

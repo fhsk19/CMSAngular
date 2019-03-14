@@ -1,0 +1,61 @@
+<div>
+  <table id = "vendororderhistory" class="table-bordered table-hover table-responsive" align="center">
+    <style>
+      table, th, td {
+        border: 1px solid black;
+         }
+      th {
+          cursor: pointer;
+         }
+
+      .table-responsive {
+    display: block;
+    width: 80%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+        }
+    </style>
+    <thead>
+      <tr bgcolor="#a1f4a9">
+        <th>VId</th>
+        <th>OId</th>
+        <th>FoodId</th>
+        <th>Qty</th>
+        <th>TotalPrice</th>
+        <th>EstimatedTime</th>
+        <th>OrderTime</th>
+        <th>OrderDate</th>
+        <th>CId</th>
+        <th width= "15%">OStatus</th>
+        <th width= "25%">OComment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr bgcolor="#eddcc4" *ngFor='let ord of orders '>
+        <td>{{ord.vid}}</td>
+        <td>{{ord.oid}}</td>
+        <td>{{ord.foodId}}</td>
+        <td>{{ord.qty}}</td>
+        <td>{{ord.totalPrice}}</td>
+        <td>{{ord.estimatedTime}}</td>
+        <td>{{ord.orderTime}}</td>
+        <td>{{ord.orderDate | date}}</td>
+        <td>{{ord.cid}}</td>
+        <td>{{ord.ostatus}}</td>
+        <td>{{ord.ocomment}}</td>
+
+      </tr>
+      <tr *ngIf="!orders || orders.length==0">
+
+        <td colspan="11">
+
+          No vhistory list to display
+
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+

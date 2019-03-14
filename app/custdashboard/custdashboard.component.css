@@ -1,0 +1,28 @@
+input[type=button]{
+  border-radius: 4px;
+  background-color:  #d68b75;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 22px;
+  padding: 15px;
+  width: 250px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.blinking{
+  animation: blinkingText 1.8s infinite;
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+  color: rgb(70, 64, 64);
+}
+@keyframes blinkingText{
+	0%{		color: rgb(70, 64, 64);	}
+	49%{	color: transparent;	}
+	50%{	color: rgb(70, 64, 64);	}
+	99%{	color: rgb(70, 64, 64);	}
+	100%{	color: rgb(70, 64, 64);	}
+}

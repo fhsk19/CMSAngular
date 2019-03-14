@@ -1,0 +1,57 @@
+<div>
+
+  <table id = "vendoracceptdeny" class="table-bordered table-hover table-responsive" align="center">
+    <thead>
+      <tr bgcolor="#a1f4a9">
+        <th width ="13%">oId</th>
+        <th>FoodId</th>
+        <th>VId</th>
+        <th>Qty</th>
+        <th>TotalPrice</th>
+        <th>EstimatedTime</th>
+        <th>OrderTime</th>
+        <th>OrderDate</th>
+        <th width ="10%">CId</th>
+        <th width ="20%">OStatus</th>
+        <th width ="20%">OComment</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr bgcolor="#eddcc4" *ngFor='let ord of orders;'>
+           <td> <input type="checkbox" name='ord.oid'
+            [value]='ord.oid'
+            (click)=toggleSelect(ord,$event.target.checked)/>
+               {{ord.oid}} </td>
+        <td>{{ord.foodId}}</td>
+        <td>{{ord.vid}}</td>
+        <td>{{ord.qty}}</td>
+        <td>{{ord.totalPrice}}</td>
+        <td>{{ord.estimatedTime}}</td>
+        <td>{{ord.orderTime}}</td>
+        <td>{{ord.orderDate | date}}</td>
+        <td>{{ord.cid}}</td>
+        <td>{{ord.ostatus}}</td>
+        <td><input type="text" class="form-control" [disabled]='!ord.isSelected'required></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<br>
+<div>
+  <input type="button"
+  value= "Accept"
+  (click) = "acceptorder()" /> &nbsp;
+  <input type="button"
+  value= "Deny"
+  (click) = "denyorder()" />
+</div>
+
+
+<div>
+
+
+
+
